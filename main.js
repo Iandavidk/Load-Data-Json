@@ -7,4 +7,12 @@ async function loadIntoTable(url, table) {
     //Clear the table
     tableHead.innerHTML = "<tr></tr>";
     tableBody.innerHTML = "";
+
+    //Populate the headers
+    for (const headerText of headers) {
+        const headerElement = document.createElement("th");
+
+        headerElement.textContent = headerText
+        tableHead.querySelector("tr").appendChild(headerElement);
+    }
 }
