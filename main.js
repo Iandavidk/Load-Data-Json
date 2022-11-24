@@ -3,4 +3,8 @@ async function loadIntoTable(url, table) {
     const tableBody = table.querySelector("tbody")
     const response = await fetch(url)
     const {headers, rows} = await response.json()
+
+    //Clear the table
+    tableHead.innerHTML = "<tr></tr>";
+    tableBody.innerHTML = "";
 }
