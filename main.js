@@ -15,4 +15,20 @@ async function loadIntoTable(url, table) {
         headerElement.textContent = headerText
         tableHead.querySelector("tr").appendChild(headerElement);
     }
+
+    //Populate the rows
+    for (const row of rows) {
+        const rowElement = document.createElement("tr");
+
+        for (const cellText of row) {
+            const cellElement = document.createElement("td");
+            cellElement.textContent = cellText;
+            rowElement.appendChild(cellElement);
+        }
+
+        tableBody.appendChild(rowElement);
+
+    }
 }
+
+loadIntoTable("./data.json", document.querySelector("table"));
